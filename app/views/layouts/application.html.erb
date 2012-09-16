@@ -4,39 +4,63 @@
   <title>AthlonAssignment</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
 <body>
 	
 	<header id="main_header">
-		<div id="sun_rays">
+		<img id="phone_logo" src="/assets/vietti_logo.png" class="visible-phone" />
+		<div id="sun_rays" class="hidden-phone">
 			<div class="row">
 				<div id="vietti_logo" class="span4"></div>
 				<div id="cowgirl" class="span4"></div>
-				<div id="football_experts" class="span4 pull-right"></div>
+				<div id="football_experts" class="span4 pull-right "></div>
 			</div>
 			
-			<div id="navigation_container" class="span12">
-				<ul>
-					<li>Home</li>
-					<li>Prizes</li>
-					<li>News</li>
-					<li>Support</li>
-				</ul>
-			</div>
+			
 									
 		</div>
 		
-	</header>
+		
+	</header>	
 	
-	<div id="helmet"></div>
-	
-	<div id="wrapper" class="">	
-		<!-- <img id="peppers" src="/assets/chilipeppers_background.png" /> -->
-		<div id="main" class="container">	
-			<%= yield %>			
-		</div>	
+	<div class="container">
+		<div class="navbar navbar-inverse">
+		  <div class="navbar-inner">
+		    <div class="container">
+		 
+		      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </a>	 			      
+		 
+		      <!-- Everything you want hidden at 940px or less, place within here -->
+		      <div class="nav-collapse">
+		        <!-- .nav, .navbar-search, .navbar-form, etc -->
+		        <ul class="nav">
+				    <li class="active"><a href="#">Home</a></li>
+				    <li><a href="#">Prizes</a></li>
+				    <li><a href="#">News</a></li>
+				    <li><a href="#">Support</a></li>
+				  </ul>
+		      </div>
+		 
+		    </div>
+		  </div>
+		</div>
 	</div>
+	<!-- <img id="peppers" src="/assets/chilipeppers_background.png" /> -->
+	<div id="main" class="container">
+		
+		
+			
+		<%= yield %>		
+			
+	</div>	
+
 
 </body>
 </html>
