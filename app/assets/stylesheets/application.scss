@@ -13,6 +13,15 @@
 
 @import "bootstrap";
 
+body {
+  padding: 0;
+  margin: 0;
+  background: url("/assets/chilipeppers_background.png") no-repeat center 220px;
+  width: 100%;
+  display: table;
+}
+
+
 #main_header {
   height: 225px;
   background-image:url("/assets/header_background_gradient.png");
@@ -24,6 +33,76 @@
     height: 230px;
     margin: 0 auto;
     background-image:url("/assets/header_sunrays.png");  
+    
+    .row {
+      
+      margin: 0;
+      padding: 0;
+    }
+    
+    #vietti_logo {
+      margin-top: 50px;
+      width: 238px;
+      height: 137px;
+      background-image:url("/assets/vietti_logo.png");
+    }
+    
+    #cowgirl {           
+      width: 388px;
+      height: 225px;
+      margin: 0 auto;
+      margin-left: 50px;
+      background-image:url("/assets/cowgirl.png");
+    }
+    
+    #football_experts {
+      margin-top: 80px;
+      width: 276px;
+      height: 73px;
+      background-image:url("/assets/football_experts_club_logo.png");
+    }
+    
   }
   
+  #navigation_container {    
+       
+    ul {      
+      list-style-type: none;
+      
+      li {
+        margin-right: 10px;
+        float: left;
+      }  
+    }
+    
+  } // end navigation container
+} // end main_header
+
+
+
+
+#main.container {
+  background: #fff;
+  padding: 20px;
+  
+  #sign_up {
+    margin-top: 60px;
+  }
+  
+  #game_navigation_container {
+    ul {
+      list-style-type: none;
+      
+      li {
+        margin-right: 20px;
+        float: left;
+      }
+    } // end unordered list
+  } // end game navigation container
+  
 }
+
+
+
+
+

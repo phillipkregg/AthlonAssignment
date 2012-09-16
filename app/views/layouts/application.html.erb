@@ -9,14 +9,33 @@
 <body>
 	
 	<header id="main_header">
-		<div id="sun_rays"></div>
+		<div id="sun_rays">
+			<div class="row">
+				<div id="vietti_logo" class="span4"></div>
+				<div id="cowgirl" class="span4"></div>
+				<div id="football_experts" class="span4 pull-right"></div>
+			</div>
+			
+			<div id="navigation_container" class="span12">
+				<ul>
+					<li>Home</li>
+					<li>Prizes</li>
+					<li>News</li>
+					<li>Support</li>
+				</ul>
+			</div>
+									
+		</div>
 		
 	</header>
 	
-	<div id="main" class="container">
-
-		<%= yield %>
-		
+	<div id="helmet"></div>
+	
+	<div id="wrapper" class="">	
+		<!-- <img id="peppers" src="/assets/chilipeppers_background.png" /> -->
+		<div id="main" class="container">	
+			<%= yield %>			
+		</div>	
 	</div>
 
 </body>
