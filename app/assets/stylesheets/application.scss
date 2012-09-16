@@ -12,3 +12,18 @@
 
 
 @import "bootstrap";
+
+#main_header {
+  height: 225px;
+  background-image:url("/assets/header_background_gradient.png");
+  background-repeat: repeat-x;
+  border-style: none;
+  
+  #sun_rays {
+    width: 1015px;
+    height: 230px;
+    margin: 0 auto;
+    background-image:url("/assets/header_sunrays.png");  
+  }
+  
+}
