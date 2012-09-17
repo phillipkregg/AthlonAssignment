@@ -10,10 +10,13 @@
  * 
 */
 
-
+@import "bourbon";
 @import "bootstrap";
-
 @import "bootstrap-responsive";
+
+@import url(http://fonts.googleapis.com/css?family=Russo+One);
+@import url(http://fonts.googleapis.com/css?family=Muli);
+
 
 // Altered LESS Variables
 
@@ -55,6 +58,22 @@ $navbarInverseBrandColor:                $navbarInverseLinkColor;
 
 
 
+
+// Base class and wrapper
+.navbar {
+  width: 100%;
+}
+
+// Inner for background effects
+// Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
+.navbar-inner {
+  min-height: $navbarHeight;
+  padding-left:  0px;
+  padding-right: 0px;
+}
+
+
+
 body {
   padding: 0;
   margin: 0;
@@ -64,8 +83,18 @@ body {
 }
 
 
+h2 {
+  font-family: 'Russo One', sans-serif;
+}
+
+p {
+  font-family: 'Muli', sans-serif;
+}
+
+
 .navbar {
   margin: 0;
+  padding: 0;
 }
 
 
@@ -118,11 +147,11 @@ body {
   }
   
   #navigation_container {    
-       
+    margin-top: 20px;
     ul {      
       list-style-type: none;
-      
-      li {
+            
+      li {        
         margin-right: 10px;
         float: left;
       }  
@@ -134,11 +163,17 @@ body {
 
 
 
-
 #main.container {
+  @include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65));
   background: #fff;
-  padding: 20px;
+  //padding: 20px;
   //max-width: 940px;
+  
+  #hero {
+    p {
+      font-size: 20px;
+    }
+  }
   
   img#football_player {
     float: right;
@@ -149,6 +184,8 @@ body {
   }
   
   #game_navigation_container {
+    padding: 10px;
+    margin-bottom: 20px;
     ul {
       list-style-type: none;
       
@@ -160,6 +197,10 @@ body {
   } // end game navigation container
   
   
+  #in_game_activity_container {
+    padding: 10px;
+  }
+  
   ul#registered_list {
     list-style-type: none;
     margin-left: 10px;
@@ -169,18 +210,23 @@ body {
     li {
       padding-top: 10px;
       padding-bottom: 10px;
+      
       background: rgb(255,255,255); /* Old browsers */
-      background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(102,182,252,1) 100%); /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(102,182,252,1))); /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(102,182,252,1) 100%); /* Opera 11.10+ */
-      background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(102,182,252,1) 100%); /* IE10+ */
-      background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(102,182,252,1) 100%); /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#66b6fc',GradientType=0 ); /* IE6-9 */
+      background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(204,217,255,1) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(204,217,255,1))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,217,255,1) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,217,255,1) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,217,255,1) 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(204,217,255,1) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ccd9ff',GradientType=0 ); /* IE6-9 */
+
+      
+      
       
       img {
         float: left;
         margin: 5px;
+        
       }
       
       p {
@@ -204,6 +250,7 @@ body {
   
   
   #remaining_time_container {
+    
     border: 1px solid #666;
     #week_header {
       color: #fff;
@@ -261,12 +308,209 @@ body {
   #vietti_ad_container {
     width: 300px;
     height: 250px;
-    background-image: url("/assets/vietti_ad.png");
+    
+    img {
+      height: 100%;
+      width: 100%
+    }
+    
   }
+  
+  
+  #college_football_news {
+    padding: 10px;
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        margin-top: 40px;
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  
+  
+  #rankings_container {
+    //margin-top: -80px;
+    width: 300px;
+    div:nth-child(1) {
+      color: #fff;
+      padding: 5px;
+      font-size: 18px;
+      background: #000;
+      
+    }
+    
+    img {
+      margin-bottom: 10px;
+    }
+    
+   
+  }
+  
+  
+  #create_leagues_container {
+    margin-top: 20px;
+    padding: 10px;
+    p {
+      font-size: 20px;
+      
+    }
+    
+    a {
+      margin-top: 30px;
+    }
+    
+  } // end create leagues container
+  
+  
+  
+  #make_your_picks_container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    p {
+      font-size: 20px;
+      
+    }
+    
+     a {
+      margin-top: 30px;
+    }
+    
+    div.pull-left {
+      img {
+        margin-top: -50px;
+      }
+      
+    }       
+    
+  } //end make your picks container
+  
+  
+  
+  
+  #watch_video_container.row {
+      
+      padding: 10px;
+      
+      p {
+        font-size: 20px;
+        
+      }
+      
+      a {
+        margin-top: 30px;
+      }
+  }  // end watch video container
+    
+  
+  
   
 }// end main container
 
+#sign_up_today_container {
+    
+    height: 50px;
+    margin: 0;
+    padding: 10px;   
+     
+    background: rgb(162,217,66); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(162,217,66,1) 0%, rgba(162,217,66,1) 50%, rgba(124,189,11,1) 51%, rgba(124,189,11,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(162,217,66,1)), color-stop(50%,rgba(162,217,66,1)), color-stop(51%,rgba(124,189,11,1)), color-stop(100%,rgba(124,189,11,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(162,217,66,1) 0%,rgba(162,217,66,1) 50%,rgba(124,189,11,1) 51%,rgba(124,189,11,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(162,217,66,1) 0%,rgba(162,217,66,1) 50%,rgba(124,189,11,1) 51%,rgba(124,189,11,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(162,217,66,1) 0%,rgba(162,217,66,1) 50%,rgba(124,189,11,1) 51%,rgba(124,189,11,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(162,217,66,1) 0%,rgba(162,217,66,1) 50%,rgba(124,189,11,1) 51%,rgba(124,189,11,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2d942', endColorstr='#7cbd0b',GradientType=0 ); /* IE6-9 */
+
+    div {
+      
+      img {
+        margin-right: 50px;
+      }
+      
+      p {
+        
+        color: white;
+        font-size: 30px;
+        font-weight: heavy;
+        
+        
+      }
+      
+      a {
+        
+        
+        
+      }
+      
+    }
+    
+    
+} // end sign up today container
+   
 
 
+footer { 
+  
+  color: white; 
+  width: 100%;
+  height: 224px;
+  background: url("/assets/footer_football.png") #232323 no-repeat center center;
+  
+  div:nth-child(1) {
+    margin: 0 auto;
+    padding-top: 20px;
+    
+    div {
+      ul {
+        list-style-type: none;
+        li {
+          
+          a {
+            font-size: 12px;
+            color: white;
+            
+          }
+          
+        }
+      }
+    }
+    
+    div:nth-child(1) {
+      ul {
+        list-style-type: none;
+        li {
+          float: left;
+          font-size: 11px;
+          a {
+            font-style: italic;
+            text-decoration: underline;
+            color: white;
+            font-size: 14px;
+          }
+        }        
+      }
+    }  // end first div
+    
+    div:nth-child(4) {
+      ul {
+        li {
+          font-size: 12px;
+          p {
+            margin-top: 10px;
+          }
+        }
+      }
+    } // end fourth column
+    
+  } // end of footer container row div
+  
+  
+  
+} // end footer
 
 
